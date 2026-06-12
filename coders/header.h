@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:20:10 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/11 06:40:41 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:54:32 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ int			request_dongle(t_params *global, t_coder *coder, t_dongle *dongle);
 void		release_dongle(t_dongle *dongle);
 int			init_coders(t_params *global);
 int			init_dongles(t_params *global);
+int			smart_sleep(long time, t_params *global);
 
 #endif

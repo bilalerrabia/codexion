@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:20:10 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/11 06:40:41 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/12 18:05:38 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void	*monitor_func(void *args)
 		if (done)
 			return (NULL);
 		usleep(1000);
+		// if (smart_sleep(1000, global))
+			// return (NULL);
 	}
 	return (NULL);
 }
