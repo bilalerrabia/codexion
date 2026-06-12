@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:20:10 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/12 18:05:23 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/12 18:08:17 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ static int	compile_phase(t_coder *coder)
 	pthread_mutex_unlock(&coder->mutex);
 	log_state(coder, "is compiling");
 	usleep(1000 * coder->global->compiling_time);
-	// smart_sleep(1000 * coder->global->compiling_time, coder->global);
 	release_dongle(coder->right_dongle);
 	release_dongle(coder->left_dongle);
 	return (sim_stopped(coder->global));
@@ -69,12 +68,10 @@ static int	rest_phase(t_coder *coder)
 		return (1);
 	log_state(coder, "is debugging");
 	usleep(1000 * coder->global->debugging_time);
-	// smart_sleep(1000 * coder->global->debugging_time, coder->global);
 	if (sim_stopped(coder->global))
 		return (1);
 	log_state(coder, "is refactoring");
 	usleep(1000 * coder->global->refactoring_time);
-	// smart_sleep(1000 * coder->global->refactoring_time, coder->global);
 	if (sim_stopped(coder->global))
 		return (1);
 	pthread_mutex_lock(&coder->mutex);
@@ -97,7 +94,6 @@ void	*coder_func(void *args)
 	pthread_mutex_unlock(&global->stop_mutex);
 	if (coder->index % 2 == 0)
 		usleep(200);
-		// smart_sleep(200, global);
 	comp_num = 0;
 	while (!sim_stopped(global) && comp_num < global->required_compile)
 	{
