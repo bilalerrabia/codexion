@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:20:10 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/11 06:40:41 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/12 05:39:52 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,15 @@ int	init_simulation(t_params *global)
 	pthread_mutex_init(&global->print_mutex, NULL);
 	pthread_cond_init(&global->cond, NULL);
 	if (init_coders(global))
+	{
 		ft_exit(global);
+		return (1);
+	}
 	if (init_dongles(global))
+	{
 		ft_exit(global);
+		return (1);
+	}
 	global->start_time = get_time_ms();
 	return (0);
 }

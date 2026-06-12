@@ -1,1 +1,0 @@
-check all function is in the .h
