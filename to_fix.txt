@@ -1,0 +1,18 @@
+readme
+subject
+code
+
+
+condwait exercices 3
+opeque type --> pthread_t
+creat parameteres join mutex destroy
+note review
+video
+docemantation
+struct{
+    id; -> which thread (opeque type)
+    state;
+    counter;
+};
+
+atomic
