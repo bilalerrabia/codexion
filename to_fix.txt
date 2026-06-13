@@ -4,7 +4,6 @@ code
 
 
 condwait exercices 3
-opeque type --> pthread_t
 creat parameteres join mutex destroy
 note review
 struct{
