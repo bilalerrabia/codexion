@@ -138,7 +138,7 @@ pthread_mutex_unlock(&global->stop_mutex);
 - [Dining Philosophers Problem — Wikipedia](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
 - [Coffman Conditions — Wikipedia](https://en.wikipedia.org/wiki/Deadlock#Necessary_conditions)
 - [Earliest Deadline First Scheduling — Wikipedia](https://en.wikipedia.org/wiki/Earliest_deadline_first_scheduling)
-
+- https://www.cs.unibo.it/~ghini/didattica/sistop/pthreads_tutorial/POSIX_Threads_Programming.htm#Thread
 ### AI Usage
 
 Claude was used throughout this project as a learning and debugging tool:
