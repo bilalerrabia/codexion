@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:46:17 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/12 05:44:58 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/13 18:44:57 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	main(int ac,	char *av[])
 	}
 	if (start_simulation(&global))
 	{
+		free(global.coders);
+		free(global.dongles);
 		ft_exit(&global);
 		return (0);
 	}

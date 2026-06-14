@@ -6,13 +6,13 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:20:10 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/12 18:08:17 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/13 19:15:02 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static int	sim_stopped(t_params *global)
+int	sim_stopped(t_params *global)
 {
 	int	stop;
 
@@ -22,7 +22,8 @@ static int	sim_stopped(t_params *global)
 	return (stop);
 }
 
-static int	take_dongles(t_coder *coder)
+/* odd kyakhdo left howa lwl */
+int	take_dongles(t_coder *coder)
 {
 	t_dongle	*first;
 	t_dongle	*second;
@@ -50,7 +51,7 @@ static int	take_dongles(t_coder *coder)
 	return (0);
 }
 
-static int	compile_phase(t_coder *coder)
+int	compile_phase(t_coder *coder)
 {
 	pthread_mutex_lock(&coder->mutex);
 	coder->last_compilation = get_time_ms();
@@ -62,7 +63,7 @@ static int	compile_phase(t_coder *coder)
 	return (sim_stopped(coder->global));
 }
 
-static int	rest_phase(t_coder *coder)
+int	debug_refact_phase(t_coder *coder)
 {
 	if (sim_stopped(coder->global))
 		return (1);
@@ -101,7 +102,7 @@ void	*coder_func(void *args)
 			return (NULL);
 		if (compile_phase(coder))
 			return (NULL);
-		if (rest_phase(coder))
+		if (debug_refact_phase(coder))
 			return (NULL);
 		comp_num += 1;
 	}

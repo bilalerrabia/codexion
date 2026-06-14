@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:21:53 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/11 06:26:04 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/13 18:44:04 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	checker(t_params	*global)
 	if (
 		global->coders_num <= 0 || global->burnout_time < 0
 		|| global->compiling_time < 0 || global->debugging_time < 0
-		|| global->refactoring_time < 0 || global->required_compile < 0
+		|| global->refactoring_time < 0 || global->required_compile <= 0
 		|| global->dongle_cooldown < 0
 	)
 		return (1);

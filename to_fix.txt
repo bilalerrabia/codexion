@@ -1,15 +1,7 @@
-readme add notes
-subject
+condwait exercices 3
+
 code
 
-
-condwait exercices 3
-creat parameteres join mutex destroy
-note review
-struct{
-    id; -> which thread (opeque type)
-    state;
-    counter;
-};
+subject
 
 atomic

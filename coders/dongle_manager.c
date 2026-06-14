@@ -6,7 +6,7 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:20:10 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/11 06:40:41 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/13 19:04:07 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	release_dongle(t_dongle *dongle)
 	pthread_mutex_unlock(&dongle->mutex);
 }
 
-static long	dongle_key(t_params *global, t_coder *coder)
+long	dongle_key(t_params *global, t_coder *coder)
 {
 	long	last;
 
@@ -32,17 +32,17 @@ static long	dongle_key(t_params *global, t_coder *coder)
 	return (last + global->burnout_time);
 }
 
-static int	dongle_free(t_params *global, t_coder *coder, t_dongle *dongle)
+int	dongle_free(t_params *global, t_coder *coder, t_dongle *dongle)
 {
-	long	idle;
+	long	rest_time;
 
-	idle = get_time_ms() - dongle->last_time_taken;
+	rest_time = get_time_ms() - dongle->last_time_taken;
 	return (dongle->pq.size > 0 && !dongle->taken
-		&& global->dongle_cooldown <= idle
+		&& global->dongle_cooldown <= rest_time
 		&& dongle->pq.nodes[0].coder->index == coder->index);
 }
 
-static void	wait_5ms(t_coder *coder, t_dongle *dongle)
+void	wait_5ms(t_coder *coder, t_dongle *dongle)
 {
 	long			wakeup;
 	struct timespec	ts;

@@ -5,7 +5,6 @@ CFLAGS	= -Wall -Wextra -Werror -pthread
 
 SRCS	= coders/main.c \
 		coders/parsing.c \
-		coders/smart_sleep.c \
 		coders/helpers.c \
 		coders/queue.c \
 		coders/coder_dongle_init.c \

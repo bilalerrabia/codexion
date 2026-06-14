@@ -6,13 +6,13 @@
 /*   By: berrabia <berrabia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 06:20:10 by berrabia          #+#    #+#             */
-/*   Updated: 2026/06/12 18:08:25 by berrabia         ###   ########.fr       */
+/*   Updated: 2026/06/13 19:09:39 by berrabia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static int	coder_status(t_params *global, t_coder *coder)
+int	coder_status(t_params *global, t_coder *coder)
 {
 	long	last;
 	int		comp_num;
@@ -27,7 +27,7 @@ static int	coder_status(t_params *global, t_coder *coder)
 	return (comp_num >= global->required_compile);
 }
 
-static int	check_coders(t_params *global)
+int	check_coders(t_params *global)
 {
 	int	i;
 	int	count;
