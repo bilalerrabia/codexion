@@ -1,5 +1,3 @@
-condwait exercices 3
-
 code
 
 subject
